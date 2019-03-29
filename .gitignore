@@ -1,0 +1,8 @@
+node_modules
+awsomeapp_reactnative/android/\.settings/
+
+awsomeapp_reactnative/android/gradle/
+
+awsomeapp_reactnative/android/keystores/
+
+awsomeapp_reactnative/android/\.project
