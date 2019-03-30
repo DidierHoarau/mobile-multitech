@@ -10,3 +10,5 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 cd $PROJECT_DIR
 npm install
 react-native run-android
+
+react-native log-android

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
 import { Button, Header } from 'react-native-elements';
+import { AppHeader } from './common/AppHeader';
 
 const instructions = Platform.select({
   ios: 'Welcome to AwsomeApp for iOS!',
@@ -16,33 +17,22 @@ export class HomeScreen extends React.Component {
   render() {
     return (
       <View>
-        <Header
-          leftComponent={{ icon: 'menu', color: '#fff' }}
-          centerComponent={{ text: 'AwsomeApp', style: { color: '#fff' } }}
-          rightComponent={{ icon: 'home', color: '#fff' }}
-        />
-        <Button title="Start" />
-        <Text style={styles.instructions}>{instructions}</Text>
+        <AppHeader navigation={(this.props as any).navigation} />
+        <View style={styles.content}>
+          <Text style={styles.instructions}>{instructions}</Text>
+          <Button title="Friends" />
+        </View>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF'
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10
+  content: {
+    padding: 30
   },
   instructions: {
     textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5
+    marginBottom: 30
   }
 });

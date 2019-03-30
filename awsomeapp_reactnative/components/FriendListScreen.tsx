@@ -1,7 +1,8 @@
 import React from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
-import { Button, Header } from 'react-native-elements';
+import { StyleSheet, View } from 'react-native';
+import { Header } from 'react-native-elements';
 import { ListItem } from 'react-native-elements';
+import { AppHeader } from './common/AppHeader';
 
 const list = [
   {
@@ -25,17 +26,9 @@ export class FriendListScreen extends React.Component {
     title: 'Friends'
   };
   render() {
-    const { navigate } = (this.props as any).navigation;
     return (
       <View>
-        <Header
-          leftComponent={{ icon: 'menu', color: '#fff' }}
-          centerComponent={{
-            text: 'AwsomeApp: Friends',
-            style: { color: '#fff' }
-          }}
-          rightComponent={{ icon: 'home', color: '#fff' }}
-        />
+        <AppHeader navigation={(this.props as any).navigation} />
         <View>
           {list.map((l, i) => (
             <ListItem
@@ -51,21 +44,4 @@ export class FriendListScreen extends React.Component {
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF'
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5
-  }
-});
+const styles = StyleSheet.create({});
